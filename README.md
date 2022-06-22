@@ -48,9 +48,6 @@ Config is at `src/config/databases.js`.
 This API can connect to an OAuth2 server like `resonatecoop/id`.
 Config is at `src/config/grant.js`.
 
-```sh
-npm test
-```
 
 ## LICENSE
 
