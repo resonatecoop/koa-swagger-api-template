@@ -1,0 +1,36 @@
+--- 
+services: 
+  redis: 
+    networks:
+      - redis-network
+    command: 
+      - redis-server
+      - "--appendonly"
+      - "yes"
+      - "--requirepass"
+      - "password"
+    image: redis
+    ports: 
+      - "6379:6379"
+
+  api: 
+    networks:
+      - api-network
+      - redis-network
+    build: .
+    command: npm start
+    environment:
+      - NODE_ENV=development
+    depends_on: 
+      - redis
+    ports: 
+      - "4000:4000"
+    restart: always
+
+networks:
+  api-network:
+    driver: bridge
+  redis-network:
+    driver: bridge
+
+version: "3.7"
