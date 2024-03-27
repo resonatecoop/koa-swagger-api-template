@@ -16,7 +16,7 @@
     "test:deps": "dependency-check --verbose --missing ./lib/**/*.js --no-dev --i mysql2 --i pg --i pg-hstore --i dotenv-safe --i sequelize-cli"
   },
   "dependencies": {
-    "@koa/cors": "^3.1.0",
+    "@koa/cors": "^5.0.0",
     "@koa/router": "^10.0.0",
     "debug": "^4.3.3",
     "dotenv-safe": "^8.2.0",
